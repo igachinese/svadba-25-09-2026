@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Свадьба — 25.09.2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@400;500;600&family=Nunito+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=2">
+</head>
+<body>
+  <!-- Hero cover -->
+  <header class="hero" id="hero">
+    <img class="hero__bg" id="hero-bg" src="" alt="Свадьба 25.09.2026">
+    <div class="hero__scrim"></div>
+    <div class="hero__content">
+      <p class="hero__date" id="hero-date">25.09.2026</p>
+      <h1 class="hero__title" id="hero-title">Свадьба</h1>
+      <p class="hero__subtitle" id="hero-subtitle" hidden></p>
+    </div>
+    <button class="hero__scroll" id="hero-scroll" type="button" aria-label="Перейти к фотографиям">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 5v14"></path>
+        <path d="M19 12l-7 7-7-7"></path>
+      </svg>
+    </button>
+  </header>
+
+  <!-- Sticky toolbar -->
+  <nav class="toolbar" id="toolbar" aria-label="Разделы фотографий">
+    <div class="toolbar__inner">
+      <div class="tabs" id="folder-tabs" role="tablist"></div>
+
+      <div class="toolbar__right">
+        <span class="toolbar__count" id="folder-count"></span>
+        <div class="download-wrap" id="download-wrap">
+          <button class="btn-download" id="btn-download-toggle" type="button" aria-expanded="false">
+            <span>Скачать файлы</span>
+            <svg class="btn-download__chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 9l6 6 6-6"></path>
+            </svg>
+          </button>
+          <div class="download-menu" id="download-menu" hidden></div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Gallery container -->
+  <main class="main" id="gallery-main">
+    <div class="gallery-grid" id="gallery-grid"></div>
+    <div class="gallery-sentinel" id="gallery-sentinel" aria-hidden="true"></div>
+  </main>
+
+  <footer class="footer">
+    <span id="footer-text">Свадьба · 25.09.2026</span>
+  </footer>
+
+  <!-- Back to top button -->
+  <button class="scroll-top" id="scroll-top" type="button" aria-label="Наверх" hidden>
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 19V5"></path>
+      <path d="M5 12l7-7 7 7"></path>
+    </svg>
+  </button>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Просмотр фотографии" hidden>
+    <div class="lightbox__topbar">
+      <div class="lightbox__counter" id="lb-counter">1 / 1</div>
+      <div class="lightbox__actions">
+        <a class="lightbox__btn lightbox__btn--download" id="lb-download" href="#" download title="Скачать фото">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          <span>Скачать</span>
+        </a>
+        <button class="lightbox__btn" id="lb-zoom" type="button" title="Увеличить" aria-label="Увеличить">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            <line x1="11" y1="8" x2="11" y2="14"></line>
+            <line x1="8" y1="11" x2="14" y2="11"></line>
+          </svg>
+        </button>
+        <button class="lightbox__btn" id="lb-close" type="button" title="Закрыть (Esc)" aria-label="Закрыть">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="lightbox__stage" id="lb-stage">
+      <button class="lightbox__nav lightbox__nav--prev" id="lb-prev" type="button" aria-label="Предыдущее фото">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
+
+      <div class="lightbox__img-wrap" id="lb-img-wrap">
+        <img class="lightbox__img" id="lb-img" src="" alt="">
+      </div>
+
+      <button class="lightbox__nav lightbox__nav--next" id="lb-next" type="button" aria-label="Следующее фото">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </button>
+    </div>
+
+    <div class="lightbox__caption" id="lb-caption"></div>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="data/gallery.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
