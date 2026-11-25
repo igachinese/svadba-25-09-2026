@@ -4,7 +4,7 @@ window.GALLERY_CONFIG = {
   date: "25.09.2026",
   subtitle: "",
   // Ссылка на общую папку или архив на Google Диске (кнопка «Скачать файлы»)
-  downloadAllUrl: "",
+  downloadAllUrl: "https://drive.google.com/drive/folders/1rowrDF-mZqRd_zFKisX59pNi4HexO2Lb?usp=sharing",
   // Необязательно: отдельные ссылки на каждую папку на Google Диске
   folderDownloadUrls: {
     "zags": "",
